@@ -6,7 +6,8 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220905091904">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20220905213838" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20220905213838">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -138,6 +139,76 @@
 
 
 			</div>
+
+			<section class="team-slider">
+				<div class="team-slider__container">
+					<!-- Оболочка слайдера -->
+					<div class="team-slider__slider swiper">
+						<!-- Двигающееся часть слайдера -->
+						<div class="team-slider__wrapper swiper-wrapper">
+							<!-- Слайд -->
+							<div class="team-slider__slide swiper-slide">
+								<div class="team-slider__image">
+									<picture><source srcset="img/alexander.webp" type="image/webp"><img src="img/alexander.jpg" alt="alexander"></picture>
+								</div>
+								<div class="team-slider__content">
+									<a href="../team.html" class="team-slider__title--link title-link">Team</a>
+									<figure>
+										<blockquote class="team-slider__title basic-title title-gradient">We are used to taking responsibility and always guarantee honest, timely assistance, even in situations where most people are powerless.</blockquote>
+										<figcaption class="team-slider__author">Олександр Олександровський</figcaption>
+										<figcaption class="team-slider__author--position">Керуючий партнер</figcaption>
+									</figure>
+								</div>
+							</div>
+							<div class="team-slider__slide swiper-slide">
+								<div class="team-slider__image">
+									<picture><source srcset="img/alexander.webp" type="image/webp"><img src="img/alexander.jpg" alt="alexander"></picture>
+								</div>
+								<div class="team-slider__content">
+									<a href="../team.html" class="team-slider__title--link title-link">Team</a>
+									<figure>
+										<blockquote class="team-slider__title basic-title title-gradient">We are used to taking responsibility and always guarantee honest, timely assistance, even in situations where most people are powerless.</blockquote>
+										<figcaption class="team-slider__author">Олександр Олександровський</figcaption>
+										<figcaption class="team-slider__author--position">Керуючий партнер</figcaption>
+									</figure>
+								</div>
+							</div>
+							<div class="team-slider__slide swiper-slide">
+								<div class="team-slider__image">
+									<picture><source srcset="img/alexander.webp" type="image/webp"><img src="img/alexander.jpg" alt="alexander"></picture>
+								</div>
+								<div class="team-slider__content">
+									<a href="../team.html" class="team-slider__title--link title-link">Team</a>
+									<figure>
+										<blockquote class="team-slider__title basic-title title-gradient">We are used to taking responsibility and always guarantee honest, timely assistance, even in situations where most people are powerless.</blockquote>
+										<figcaption class="team-slider__author">Олександр Олександровський</figcaption>
+										<figcaption class="team-slider__author--position">Керуючий партнер</figcaption>
+									</figure>
+								</div>
+							</div>
+						</div>
+						<!-- Если нужна пагинация -->
+						<div class="swiper-pagination">
+							<div class="pagging">
+								<a href="" class="pagging__arrow"></a>
+								<ul class="pagging__list">
+									<li>
+										<a href="" class="pagging__item _active">1</a>
+									</li>
+									<li>
+										<a href="" class="pagging__item">2</a>
+									</li>
+									<li>
+										<a href="" class="pagging__item">3</a>
+									</li>
+								</ul>
+								<a href="" class="pagging__arrow"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section class="clients">
 				<div class="clients__title">
 					<h5>They already trust us</h5>
@@ -160,27 +231,37 @@
 			<section class="publications">
 				<div class="publications__container">
 					<div class="publications__title--wrapper">
-						<a href="../publications.html" class="publications__title--link">Publications</a>
-						<h2 class="publications__title basic-title">We have something to tell</h2>
+						<a href="../publications.html" class="publications__title--link title-link">Publications</a>
+						<h2 class="publications__title basic-title title-gradient">We have something to tell</h2>
+					</div>
+					<div class="publications__title--wrapper-rec">
+						<a href="../publications.html" class="publications__title--link title-link">Publications</a>
+						<h2 class="publications__title publications__title--rec basic-title title-gradient">Recommended</h2>
 					</div>
 					<ul class="publications__list">
 						<li class="publications__item">
 							<a class="publications__item--link" href="#"><picture><source srcset="img/publication_one.webp" type="image/webp"><img src="img/publication_one.jpg" alt="Ecommerce"></picture></a>
-							<h4 class="publications__item--title"><a href="#">Equity associate</a></h4>
-							<time class="publications__date" datetime="2022-04-22">April 22</time>
-							<p class="publications__item--text">I'm a jun on projects. I am a co-owner of a law firm. How it happened. Before entering my parents told me that if I…</p>
+							<div class="publications__item--content">
+								<h4 class="publications__item--title"><a href="#">Equity associate</a></h4>
+								<time class="publications__date" datetime="2022-04-22">April 22</time>
+								<p class="publications__item--text">I'm a jun on projects. I am a co-owner of a law firm. How it happened. Before entering my parents told me that if I…</p>
+							</div>
 						</li>
 						<li class="publications__item">
 							<a class="publications__item--link" href="#"><picture><source srcset="img/publication_two.webp" type="image/webp"><img src="img/publication_two.jpg" alt="Support"></picture></a>
-							<h4 class="publications__item--title"><a href="#">Penalty for the Good Corporation: what will happen to Google and others for violating the GDPR</a></h4>
-							<time class="publications__date" datetime="2022-09-29">September 29</time>
-							<p class="publications__item--text">And why the recovery of 50 million euros could be a fateful precedent According to Mind.ua January 21 National Commission for Data Protection.</p>
+							<div class="publications__item--content">
+								<h4 class="publications__item--title"><a href="#">Penalty for the Good Corporation: what will happen to Google and others for violating the GDPR</a></h4>
+								<time class="publications__date" datetime="2022-09-29">September 29</time>
+								<p class="publications__item--text">And why the recovery of 50 million euros could be a fateful precedent According to Mind.ua January 21 National Commission for Data Protection.</p>
+							</div>
 						</li>
 						<li class="publications__item">
 							<a class="publications__item--link" href="#"><picture><source srcset="img/publication_three.webp" type="image/webp"><img src="img/publication_three.jpg" alt="Coprorate"></picture></a>
-							<h4 class="publications__item--title"><a href="#">Millennial Testament</a></h4>
-							<time class="publications__date" datetime="2022-08-19">August 19</time>
-							<p class="publications__item--text">What and how modern vloggers, opinion leaders and crypto-millionaires will inherit A typical legacy of the Ukrainian generation X looks like this: an apartment in…</p>
+							<div class="publications__item--content">
+								<h4 class="publications__item--title"><a href="#">Millennial Testament</a></h4>
+								<time class="publications__date" datetime="2022-08-19">August 19</time>
+								<p class="publications__item--text">What and how modern vloggers, opinion leaders and crypto-millionaires will inherit A typical legacy of the Ukrainian generation X looks like this: an apartment in…</p>
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -215,7 +296,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20220905091904"></script>
+	<script src="js/app.min.js?_v=20220905213838"></script>
 </body>
 
 </html>
