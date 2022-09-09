@@ -2627,7 +2627,7 @@
         images: core_images
     };
     const extendedDefaults = {};
-    class core_Swiper {
+    class Swiper {
         constructor() {
             let el;
             let params;
@@ -2642,7 +2642,7 @@
                     const newParams = utils_extend({}, params, {
                         el: containerEl
                     });
-                    swipers.push(new core_Swiper(newParams));
+                    swipers.push(new Swiper(newParams));
                 }));
                 return swipers;
             }
@@ -2983,26 +2983,26 @@
             return defaults;
         }
         static installModule(mod) {
-            if (!core_Swiper.prototype.__modules__) core_Swiper.prototype.__modules__ = [];
-            const modules = core_Swiper.prototype.__modules__;
+            if (!Swiper.prototype.__modules__) Swiper.prototype.__modules__ = [];
+            const modules = Swiper.prototype.__modules__;
             if ("function" === typeof mod && modules.indexOf(mod) < 0) modules.push(mod);
         }
         static use(module) {
             if (Array.isArray(module)) {
-                module.forEach((m => core_Swiper.installModule(m)));
-                return core_Swiper;
+                module.forEach((m => Swiper.installModule(m)));
+                return Swiper;
             }
-            core_Swiper.installModule(module);
-            return core_Swiper;
+            Swiper.installModule(module);
+            return Swiper;
         }
     }
     Object.keys(prototypes).forEach((prototypeGroup => {
         Object.keys(prototypes[prototypeGroup]).forEach((protoMethod => {
-            core_Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
+            Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
         }));
     }));
-    core_Swiper.use([ Resize, Observer ]);
-    const core = core_Swiper;
+    Swiper.use([ Resize, Observer ]);
+    const core = Swiper;
     function create_element_if_not_defined_createElementIfNotDefined(swiper, originalParams, params, checkProps) {
         const document = ssr_window_esm_getDocument();
         if (swiper.params.createElements) Object.keys(checkProps).forEach((key => {
@@ -3582,7 +3582,7 @@
         });
     }
     function initSliders() {
-        if (document.querySelector(".swiper")) new core(".swiper", {
+        new core(".team-slider__slider", {
             modules: [ Pagination, Navigation, Autoplay ],
             observer: true,
             observeParents: true,
@@ -3616,6 +3616,26 @@
             }));
         }
     }), 0);
+    const headersList = document.querySelectorAll(".slider__header");
+    const notesList = document.querySelectorAll(".slider__note");
+    const indicatorsList = document.querySelectorAll(".slider__indicator");
+    const descriptionsList = document.querySelectorAll(".slider__description");
+    let script_index = 0;
+    let interval = 5e3;
+    let heightsArr = [];
+    let heightMax = null;
+    setInterval((() => {
+        headersList[script_index].classList.toggle("active");
+        notesList[script_index].classList.toggle("active");
+        indicatorsList[script_index].classList.toggle("active");
+        script_index = (script_index + 1) % headersList.length;
+        headersList[script_index].classList.toggle("active");
+        notesList[script_index].classList.toggle("active");
+        indicatorsList[script_index].classList.toggle("active");
+    }), interval);
+    descriptionsList.forEach((el => heightsArr.push(el.clientHeight)));
+    heightMax = Math.max(...heightsArr);
+    descriptionsList.forEach((el => el.style.height = `${heightMax}px`));
     window["FLS"] = true;
     isWebp();
 })();

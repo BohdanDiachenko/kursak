@@ -194,14 +194,31 @@ body {
   -o-transition: color 0.7s;
   transition: color 0.7s;
   font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
 }
 
-.title-link .icon-Arrow-smoll:before {
-  content: "\e900";
+.title-link::after {
+  content: "";
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+  border: 3px solid;
+  border-color: #24A3FF;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-left: none;
+  border-bottom: none;
+  margin-left: 0.34375rem;
 }
 
 .title-link:hover {
   color: #F0145A;
+}
+
+.title-link:hover .title-link::after {
+  border-color: #F0145A;
 }
 
 .title-gradient {
@@ -1014,23 +1031,10 @@ img {
 
 .our-services__title--link {
   display: none;
-  margin-bottom: 0.625rem;
-  color: #24A3FF;
-  -webkit-transition: color 0.7s;
-  -o-transition: color 0.7s;
-  transition: color 0.7s;
-}
-
-.our-services__title--link .icon-Arrow-smoll:before {
-  content: "\e900";
 }
 
 .home .our-services__title--link {
-  display: block;
-}
-
-.our-services__title--link:hover {
-  color: #F0145A;
+  display: inline-block;
 }
 
 .our-services__list {
@@ -1305,6 +1309,121 @@ img {
   font-size: 0.875rem;
   line-height: 1.5714285714;
   color: #B3B3BA;
+}
+
+.experience {
+  position: relative;
+  z-index: 1000;
+  padding-top: 60px;
+}
+
+.experience__container {
+  margin-bottom: 30px;
+}
+
+.experience__wrapper {
+  max-width: 67.5rem;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 46px 60px 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template: 46px 1fr/1fr;
+  gap: 60px;
+}
+
+.experience__radio {
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
+.experience-tabs {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  overflow: auto;
+}
+
+.experience-tab {
+  background: #B3B3BA;
+  -webkit-background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
+.experience-tab:hover {
+  background: -o-linear-gradient(359.87deg, #F0145A 0.84%, #EF8080 99.96%);
+  background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.experience-panels {
+  font-size: 1.1875rem;
+  line-height: 1.8947368421;
+  color: #ffffff;
+  border-top: 4px solid #B3B3BA;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 60px;
+}
+
+.experience-panel__content {
+  display: none;
+  -webkit-animation: anim 0.8s;
+          animation: anim 0.8s;
+}
+
+.experience-panel__content--title {
+  font-size: 1.875rem;
+  line-height: 1.2166666667;
+  font-weight: 700;
+  margin-bottom: 1.875rem;
+}
+
+#one:checked ~ .experience-panels #one-panel,
+#two:checked ~ .experience-panels #two-panel,
+#three:checked ~ .experience-panels #three-panel,
+#four:checked ~ .experience-panels #four-panel {
+  display: block;
+}
+
+#one:checked ~ .experience-tabs #one-tab,
+#two:checked ~ .experience-tabs #two-tab,
+#three:checked ~ .experience-tabs #three-tab,
+#four:checked ~ .experience-tabs #four-tab {
+  background: -o-linear-gradient(359.87deg, #F0145A 0.84%, #EF8080 99.96%);
+  background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@-webkit-keyframes anim {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes anim {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .swiper {
@@ -1603,6 +1722,35 @@ img {
   .clients__list {
     -ms-grid-columns: (1fr)[4];
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .experience__container {
+    margin-bottom: 60px;
+  }
+
+  .experience__wrapper {
+    -ms-grid-rows: 303px;
+    -ms-grid-columns: 449px 0 1fr;
+        grid-template: 303px/449px 1fr;
+    gap: 0;
+  }
+
+  .experience-tabs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: right;
+    border-right: 4px solid #B3B3BA;
+    border-bottom: none;
+    padding: 14.5px 60px 14.5px 10px;
+  }
+
+  .experience-panels {
+    border-top: none;
+    padding: 10px 10px 0 60px;
   }
 }
 
